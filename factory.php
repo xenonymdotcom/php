@@ -3,6 +3,7 @@
 interface Item
 {
 	public function show();	
+	public function save();	
 }
 
 /// this is the interface for factories that create items.
@@ -44,6 +45,7 @@ class phppageFactory implements ItemFactory
 class HtmlPage implements Item
 {
 	private $name;
+	
 	function __construct($args)
 	{
 		$this->name = @$args['name'];
@@ -54,11 +56,17 @@ class HtmlPage implements Item
 	{
 		return "html page (".$this->name.")";
 	}
+
+	public function save()
+	{
+		return "{ 'class':'htmlpage', 'name':'".$this->name."' }";
+	}
 }
 
 class PhpPage implements Item
 {
 	private $type;
+	
 	function __construct($args)
 	{
 		$this->type = @$args['type'];
@@ -68,6 +76,11 @@ class PhpPage implements Item
 	public function show()
 	{
 		return "php page (".$this->type.")";
+	}
+	
+	public function save()
+	{
+		return "{ 'class':'phppage', 'type':'".$this->type."' }";
 	}
 }
 
@@ -161,14 +174,26 @@ class StringCreator2 implements Creator
 	}
 }
 
+function serialise($str, $item)
+{
+	$save = $item->save();
+	return $str ? $str .", " . $save : $save;
+}
 
 function dump( $list )
 {
+	if ( !$list) 
+	{
+		echo "MT list\n";
+		return;
+	}
 	foreach( $list as $item )
 	{
 		echo $item->show();
 		echo "\n";
 	};
+	$saved = "[".array_reduce($list, "serialise" )."]";
+	echo "saved = $saved\n";
 }
 
 function main()
