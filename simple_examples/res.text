@@ -1,0 +1,33 @@
+
+---------- 001.php ------------------------------------------
+
+class TestClass
+{
+	private $a;
+	private $b;
+	
+	public function __construct($a='b')
+	{
+		$this->$a = 'Set';
+	}
+}
+
+$obj = new TestClass();
+var_dump($obj);
+
+
+---------- 002.php ------------------------------------------
+object(TestClass)#1 (2) {
+  ["a":"TestClass":private]=>
+  NULL
+  ["b":"TestClass":private]=>
+  string(3) "Set"
+}
+
+---------- 003.php ------------------------------------------
+PHP Notice:  Undefined variable: a in /home/mwynn/Projects/github/php/simple_examples/003.php on line 8
+
+---------- 004.php ------------------------------------------
+dump($p = d) dump($p = c) First=q
+
+----------------------------------------------------
