@@ -43,13 +43,27 @@
 <div id='header'>
 <h1>PHP Coding standard</h1>
 </div>
+<div id='toc'>
+	<ul>
+		<li><a href='#lvl1_basics'>Basics</a>
+			<ul>
+				<li><a href='#lvl2_header'>Header</a></li>
+				<li><a href='#lvl2_braces'>Braces</a></li>
+				<li><a href='#lvl2_continuations'>Continuations</a></li>
+				<li><a href='#lvl2_listcommas'>List commas</a></li>
+			</ul>
+		</li>
+		<li><a href='#lvl1_flowcontrol'>FlowControl</a></li>
+		<li><a href='#lvl1_functionsandlambdas'>Functions and Lambdas</a></li>
+		<li><a href='#lvl1_basics'>Basics</a></li>
+	</ul>
+</div>
 <div id='standardBody'>
 <dl id='overviewlist'>
-	<dt>Basics</dt>
-	<a name='lvl1_basics'/>
+	<dt><a name='lvl1_basics'/>Basics</dt>
 		<dd>
 			<dl>
-				<dt>Header</dt>
+				<dt><a name='lvl2_header'/>Header</dt>
 					<dd>
 						<p>All files should begin with <code>&lt;?php</code> no short tags, any short tags should be replaced</p>
 						<p>After the php open tags there should be a copyright notice identifing Paragon.</p>
@@ -57,9 +71,10 @@
 <i>// Copyright (C) 2013 Paragon Internet group</i>
 </pre></tt>
 					</dd>
-				<dt>Braces</dt>
+				<dt><a name='lvl2_braces'/>Braces</dt>
 					<dd>
-						<p>all closeing braces <code>}</code> should line up with the opening brace<code>{</code></p>
+					
+						<p><b>All</b> closeing braces <code>}</code> should line up with the opening brace<code>{</code></p>
 <tt><pre class='codeexample'>some element that needs braces
 {
 	nested item that has braces
@@ -74,8 +89,9 @@
 }
 </pre></tt>
 					</dd>
-				<dt>Continuations</dt>
+				<dt><a name='lvl2_continuations'/>Continuations</dt>
 					<dd>
+					
 						<p>All forms of continuation should <b>start</b> on the next line <b>NOT</b> end the previous.</p>
 						<p>The below example shows how code multi line concat (<code>.</code>) or <code>dot operator</code></p>
 <tt><pre class='codeexample'>
@@ -90,6 +106,7 @@ $myString =   'start'
 					</dd>
 				<dt>List Commas</dt>
 					<dd>
+					<a name='lvl2_listcommas'/>
 						<p>
 							when commas are used on long lists for <code>arrays</code> or <code>function parameters</code> which span more than one line
 							the commas should start the continued line
@@ -113,23 +130,117 @@ $var = array( 'this' => 'that'
 					</dd>
 			</dl>	
 		</dd>
-	<dt>Flowcontrols</dt>
-	<a name='lvl1_basics'/>
+	<dt><a name='lvl1_flowcontrol'/>Flowcontrols</dt>
 		<dd>
-<tt><pre>flow examples
+			<p>for <b>all</b> forms of flow control braces are mandatory</p>
+			<dl>
+				<dt>if/elseif/else</dt>
+					<dd>
+<tt><pre class='codeexample'>if (<i>&lt;cond&gt;</i>)
+{
+	<i>&lt; ... &gt;</i>
+}
 </pre></tt>
+<tt><pre class='codeexample'>if (<i>&lt;cond&gt;</i>)
+{
+	<i>&lt; ... &gt;</i>
+}
+else
+{
+	<i>&lt; ... &gt;</i>
+}
+</pre></tt>
+<p>I think that the <code>else if</code> should be used in preference to <code>elseif</code> as braces are mandatory</p>
+<tt><pre class='codeexample'>if (<i>&lt;cond&gt;</i>)
+{
+	<i>&lt; ... &gt;</i>
+}
+else if (<i>&lt;cond&gt;</i>)
+{
+	<i>&lt; ... &gt;</i>
+}
+else
+{
+	<i>&lt; ... &gt;</i>
+}
+</pre></tt>
+					</dd>
+				<dt>entry cond loop (while)</dt>
+					<dd>22222
+<tt><pre class='codeexample'>while(<i>&lt;cond&gt;</i>)
+{
+	<i>&lt; body of loop &gt;</i>
+}
+</pre></tt>
+					</dd>
+				<dt>exit cond look (do)</dt>
+					<dd>
+<tt><pre class='codeexample'>do
+{
+	<i>&lt; body of loop &gt;</i>
+}
+while(<i>&lt;cond&gt;</i>)
+</pre></tt>
+					</dd>
+				<dt>two</dt>
+					<dd>22222
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+				<dt>two</dt>
+					<dd>22222
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+			</dl>
 		</dd>
-	<dt>fucntions and lambda</dt>
-	<a name='lvl1_basics'/>
+	<dt><a name='lvl1_functionsandlambdas'/>functions and lambdas</dt>
 		<dd>
-<tt><pre>flow examples
+			<dl>
+				<dt>Function</dt>
+					<dd>
+<tt><pre class='codeexample'>function funcname($params ....)
+{
+	<i>&lt;function body&gt;</i>
+}
 </pre></tt>
+					</dd>
+				<dt>two</dt>
+					<dd>22222
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+			</dl>
 		</dd>
-	<dt>Flowcontrols</dt>
-	<a name='lvl1_basics'/>
+	<dt><a name='lvl1_classes'/>Classes</dt>
 		<dd>
-<tt><pre>flow examples
+			<dl>
+				<dt>one</dt>
+					<dd>one one
+<tt><pre class='codeexample'>flow examples
 </pre></tt>
+					</dd>
+				<dt>two</dt>
+					<dd>22222
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+			</dl>
+		</dd>
+	<dt><a name='lvl1_zzzzzzzz0001010'/>bits and bobs</dt>
+		<dd>
+			<dl>
+				<dt>one</dt>
+					<dd>one one
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+				<dt>two</dt>
+					<dd>22222
+<tt><pre class='codeexample'>flow examples
+</pre></tt>
+					</dd>
+			</dl>
 		</dd>
 </dl>
 
