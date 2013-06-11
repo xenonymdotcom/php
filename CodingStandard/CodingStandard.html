@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<title>Php Coding Standards</title>
+	<!-- inline style rather than putting it into a separate file -->
+	<style type='text/css'>
+		#header
+		{
+			border:1px solid; 
+			font-weight: normal;
+			color: black;
+			padding: 3px;
+		}
+		#standardBody
+		{
+			font-weight: normal;
+			color: black;
+		}
+		#overviewlist
+		{
+			font-weight: normal;
+			color: black;
+		}
+		.codeexample_grey
+		{
+			border: 1px dotted;
+			background:#D0D0D0;
+		}
+		.codeexample
+		{
+			border: 1px dotted #A0A0A0;
+			padding: 3px;
+			background:#000040;
+			color:#FFFF00;
+		}
+		dt
+		{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<div id='header'>
+<h1>PHP Coding standard</h1>
+</div>
+<div id='standardBody'>
+<dl id='overviewlist'>
+	<dt>Basics</dt>
+	<a name='lvl1_basics'/>
+		<dd>
+			<dl>
+				<dt>Header</dt>
+					<dd>
+						<p>All files should begin with <code>&lt;?php</code> no short tags, any short tags should be replaced</p>
+						<p>After the php open tags there should be a copyright notice identifing Paragon.</p>
+<tt><pre class='codeexample'><b>&lt;?php</b>
+<i>// Copyright (C) 2013 Paragon Internet group</i>
+</pre></tt>
+					</dd>
+				<dt>Braces</dt>
+					<dd>
+						<p>all closeing braces <code>}</code> should line up with the opening brace<code>{</code></p>
+<tt><pre class='codeexample'>some element that needs braces
+{
+	nested item that has braces
+	{
+		more etc
+		{
+		}
+		else
+		{
+		}
+	}
+}
+</pre></tt>
+					</dd>
+				<dt>Continuations</dt>
+					<dd>
+						<p>All forms of continuation should <b>start</b> on the next line <b>NOT</b> end the previous.</p>
+						<p>The below example shows how code multi line concat (<code>.</code>) or <code>dot operator</code></p>
+<tt><pre class='codeexample'>
+$myString =   'start'   
+            . ' put the space on the next line'
+            . ' as that too is a form of continuation.'
+				; // put the semicolon alone on the last line 
+{
+	<i>&lt;body of the function&gt;</i>
+}
+</pre></tt>
+					</dd>
+				<dt>List Commas</dt>
+					<dd>
+						<p>
+							when commas are used on long lists for <code>arrays</code> or <code>function parameters</code> which span more than one line
+							the commas should start the continued line
+						</p>
+<tt><pre class='codeexample'>
+function myfunc( $param_one
+               , $param_two
+               , $param_three = <i>&lt;three's default value&gt;</i>
+               , $param_four  = <i>&lt;four's default value&gt;</i>
+               )
+{
+	<i>&lt;body of the function&gt;</i>
+}
+</pre></tt>
+<tt><pre class='codeexample'>
+$var = array( 'this' => 'that'
+            , 'other' => 101
+            , 'last_item' => 'last item'
+            );
+</pre></tt>
+					</dd>
+			</dl>	
+		</dd>
+	<dt>Flowcontrols</dt>
+	<a name='lvl1_basics'/>
+		<dd>
+<tt><pre>flow examples
+</pre></tt>
+		</dd>
+	<dt>fucntions and lambda</dt>
+	<a name='lvl1_basics'/>
+		<dd>
+<tt><pre>flow examples
+</pre></tt>
+		</dd>
+	<dt>Flowcontrols</dt>
+	<a name='lvl1_basics'/>
+		<dd>
+<tt><pre>flow examples
+</pre></tt>
+		</dd>
+</dl>
+
+</div>
+
+</body>
+</html>
